@@ -137,6 +137,11 @@ bot.on('message', msg => {
     var len = 4
 
     if(idxStart == -1){
+        idxStart = msg.content.toLowerCase().indexOf("<@&" + settings.BOT_CLIENTID + ">")
+        len = 4;
+    }
+    
+    if(idxStart == -1){
         idxStart = msg.content.toLowerCase().indexOf("<@" + settings.BOT_CLIENTID + ">")
         len = 3;
     }
