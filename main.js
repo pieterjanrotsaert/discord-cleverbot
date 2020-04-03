@@ -1,9 +1,11 @@
+require('newrelic')
 const discord   = require('discord.js');
 const settings  = require("./settings")
 const https     = require('https')
 const crypto    = require('crypto')
 const express   = require("express");
 const path      = require('path')
+
 
 var app = express()
 app.use(express.static(path.join(__dirname, 'public')));
