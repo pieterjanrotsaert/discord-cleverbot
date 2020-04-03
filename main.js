@@ -38,7 +38,7 @@ function initCleverbotSession(sessionData, onSucceed, onFail){
     const req = https.request(options, res => {
         if(res.statusCode == 200){
             sessionData.xvis = extractCookie("XVIS", res.headers["set-cookie"][0])
-            //console.log("Session initialized successfully. XVIS: " + sessionData.xvis)
+            console.log("Session initialized successfully. XVIS: " + sessionData.xvis)
 
             onSucceed()
         }
@@ -97,14 +97,16 @@ function postCleverbotMessage(message, sessionData, onSuccess, onFail) {
     data += "&icognoid=wsf&icognocheck=" + crypto.createHash('md5').update(txt).digest('hex') 
 
     const req = https.request(options, res => {
-        //console.log("status: " + res.statusCode)
-        //console.log("headers: " + JSON.stringify(res.headers))
+        console.log("status: " + res.statusCode)
+        console.log("headers: " + JSON.stringify(res.headers))
 
         if(res.statusCode == 200){
             sessionData.xai = extractCookie('XAI', res.headers['set-cookie'][0])
             sessionData.convoId = res.headers['cbconvid']
 
             const response = decodeURIComponent(res.headers['cboutput'])
+
+            console.log("CLEVERBOT RESPONSE: " + response)
 
             sessionData.history.unshift(response)
             if(sessionData.history.length > cbMaxHistoryEntries)
@@ -135,7 +137,7 @@ bot.on('message', msg => {
         var message = msg.content
         message = message.slice(0, idxStart) + message.slice(idxStart + settings.BOT_CLIENTID.length + 4)
 
-        //console.log("INPUT: " + message)
+        console.log("INPUT: " + message)
 
         const curTime = Math.round((new Date()).getTime() / 1000)
         var createNewSession = false
