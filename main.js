@@ -29,7 +29,7 @@ function initCleverbotSession(sessionData, onSucceed, onFail){
     const req = https.request(options, res => {
         if(res.statusCode == 200){
             sessionData.xvis = extractCookie("XVIS", res.headers["set-cookie"][0])
-            console.log("Session initialized successfully. XVIS: " + sessionData.xvis)
+            //console.log("Session initialized successfully. XVIS: " + sessionData.xvis)
 
             onSucceed()
         }

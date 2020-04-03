@@ -1,22 +1,22 @@
 {
-  "name": "mrcrabs-bot",
+  "name": "discord-cleverbot",
   "version": "1.0.0",
   "description": "I like money.",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node main.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pieter/discord-cleverbot"
+    "url": "git+https://github.com/pieterjanrotsaert/discord-cleverbot"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/pjrotsaert-brol/discord-cleverbot/issues"
+    "url": "https://github.com/pieterjanrotsaert/discord-cleverbot/issues"
   },
-  "homepage": "https://github.com/pjrotsaert-brol/discord-cleverbot#readme",
+  "homepage": "https://github.com/pieterjanrotsaert/discord-cleverbot#readme",
   "dependencies": {
     "discord.js": "^11.6.3"
   }
