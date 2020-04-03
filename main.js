@@ -130,6 +130,8 @@ var bot = new discord.Client()
 
 bot.on('message', msg => {
 
+    console.log("DISCORD MSG: " + msg.content)
+
     // Only respond if a user is @'ing the bot.
     const idxStart = msg.content.toLowerCase().indexOf("<@!" + settings.BOT_CLIENTID + ">")
     if(idxStart !== -1)
