@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pieterjanrotsaert/discord-cleverbot"
+    "url": "git+https://github.com/pieterjanrotsaert/discord-cleverbot.git"
   },
   "author": "",
   "license": "ISC",
@@ -19,5 +19,6 @@
   "homepage": "https://github.com/pieterjanrotsaert/discord-cleverbot#readme",
   "dependencies": {
     "discord.js": "^11.6.3"
-  }
+  },
+  "devDependencies": {}
 }
