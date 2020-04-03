@@ -2,14 +2,6 @@ const discord   = require('discord.js');
 const settings  = require("./settings")
 const https     = require('https')
 const crypto    = require('crypto')
-const express   = require("express");
-const path      = require('path')
-
-var app = express()
-app.use(express.static(path.join(__dirname, 'public')));
-
-const port = process.env.PORT || '9000'
-app.listen(port, () => { console.log("Dummy listening on port " + port)})
 
 const cbUrl = "https://www.cleverbot.com"
 const cbHostname = "www.cleverbot.com"
