@@ -1,4 +1,3 @@
-require('newrelic')
 const discord   = require('discord.js');
 const settings  = require("./settings")
 const https     = require('https')
