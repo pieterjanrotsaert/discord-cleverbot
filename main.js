@@ -133,11 +133,18 @@ bot.on('message', msg => {
     console.log("DISCORD MSG: " + msg.content)
 
     // Only respond if a user is @'ing the bot.
-    const idxStart = msg.content.toLowerCase().indexOf("<@!" + settings.BOT_CLIENTID + ">")
+    var idxStart = msg.content.toLowerCase().indexOf("<@!" + settings.BOT_CLIENTID + ">")
+    var len = 4
+
+    if(idxStart == -1){
+        idxStart = msg.content.toLowerCase().indexOf("<@" + settings.BOT_CLIENTID + ">")
+        len = 3;
+    }
+
     if(idxStart !== -1)
     {
         var message = msg.content
-        message = message.slice(0, idxStart) + message.slice(idxStart + settings.BOT_CLIENTID.length + 4)
+        message = message.slice(0, idxStart) + message.slice(idxStart + settings.BOT_CLIENTID.length + len)
 
         console.log("INPUT: " + message)
 
